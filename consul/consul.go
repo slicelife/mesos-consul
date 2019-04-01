@@ -183,8 +183,9 @@ func (c *Consul) Deregister() {
 			if err != nil {
 				log.Info("Deregistration error ", err)
 			} else {
-				delete(serviceCache, s)
+				log.Infof("Deregistered %s", s)
 			}
+			delete(serviceCache, s)
 		}
 	}
 }
